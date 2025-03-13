@@ -11,10 +11,6 @@
         font-size: 14px;
     }
 
-    body {
-        background-color: rgb(230, 228, 228);
-    }
-
     .menu {
         background-color: white;
         border : 1px solid rgb(177, 176, 176);
@@ -27,6 +23,10 @@
     .InlineBlock {
         display: inline-block;
 
+    }
+    #FlexDirection {
+        flex-direction: row; /*coloca os elemntos um ao lado do outro*/
+        padding: 10px;
     }
 
     #menu-burguer {
@@ -70,58 +70,75 @@
         right: 0;
     }
 
-    .container-pai {
-        background-color: rgb(230, 229, 229);
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        display: grid;
+        grid-template-columns: 200px repeat(3, 1fr);
+        /*grid-template-rows: 100px 300px 100px;*/
+        grid-template-areas: "nav nav nav nav"
+                             "aside main main main";
+                             
+        gap: 10px;                   
+    }
+    
+    nav {
+        background-color: aquamarine;
+        grid-area: nav;
+    }
+    aside {
+        background-color: rgb(255, 255, 255);
+        grid-area: aside;
+        padding: 15px; 
+    }
+    .navbar {
+        margin-top: 15px;
         display: flex;
-        align-items: flex-start;
-        gap: 10px;
+        align-items: center;
+    }
+    .navbar img {
+        margin-right: 10px; /* Espaçamento entre a imagem e o texto */
     }
     
+    main {
+        grid-area: main;
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        padding: 15px;
+        grid-gap: 20px;
+
+    }
+    main img {
+        width: 100%;
+    }
+   
+    .video-details img {
+        width: 40px;
+        height: 40px;
+
+    }
+
+      
+    .video-details {
+        display: flex;
+        align-items: top; /* Alinha verticalmente o conteúdo ao centro */
+        margin-top: 5px;
+    }
+      
+      .video-details img {
+        margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+      }
+      
+      .video-info b, .video-info p {
+        margin: 0;
+      }
     
-    #FlexDirection {
-        flex-direction: row; /*coloca os elemntos um ao lado do outro*/
-        padding: 10px;
-    }
-
-    .video {
-        width: 952px;
-        height: 900px;      
-    }
-
-    .video span {
-        font-size: 16px;
-        font-weight: 700;
-    }
-
-    .chanel-info {
-        margin-top: 20px;
-    }
-
-    .chanel-info img {
-        margin-right: 20px;
-        vertical-align: middle;
-    }
-
-    .video p {
-        width: 550px;
-    }
-
-    .tumbls { 
-        width: 160px;
-        height: 900px;  
-    }
-    .tumbls img {
-        margin-bottom: 10px;
-    }
-
-    .txt-tumbls { 
-        width: 190px;
-        height: 900px;
-    }
-    .txt-tumbls p {
-        margin-top: 2px;
-    }
-
     
-
 </style>
